@@ -1,16 +1,16 @@
 import { Box, Button, Grid, IconButton, Table, TableBody, TableCell, TableHead, TableRow, Typography } from "@mui/material";
 import { SparkLineChart } from "@mui/x-charts";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { Bar, BarChart } from "recharts";
+import { Bar, BarChart, Text, Tooltip, XAxis, YAxis } from "recharts";
 
 const data = [ 
-  {name:'jan', data:3200},
-  {name:'feb', data:1600},
-  {name:'mar', data:1300},
-  {name:'avr', data:2600},
-  {name:'may', data:955},
-  {name:'jun', data:3432},
-  {name:'ss', data:2343},
+  {name:'Jan', data:3200},
+  {name:'Feb', data:1600},
+  {name:'Mar', data:1300},
+  {name:'Avr', data:2600},
+  {name:'May', data:955},
+  {name:'Jun', data:3432},
+  {name:'Jul', data:2343},
 ]
 
 const page = () => {
@@ -129,7 +129,7 @@ const page = () => {
             </Box>
           </Grid>
           <Grid xs={4} m={2} ml={0} sx={{borderRadius:2}} item>
-            <Box sx={{bgcolor:'white', height:250, borderWidth:1, mb:2, borderRadius:4}}>
+            <Box sx={{bgcolor:'white', height:280, borderWidth:1, mb:2, borderRadius:4}}>
               <Box sx={{p:2, display:'flex', alignItems:'center', justifyContent:'space-between'}} >
                 <Box>
                   <p className="font-Roboto font-semibold text-xl">Balance</p>
@@ -144,7 +144,8 @@ const page = () => {
                   <Typography sx={{color:'#7c62ff', fontSize:'1.875rem', lineHeight:'2.25rem', fontWeight:700, fontFamily:'Poppins'}}>6171DH</Typography>
                   <p className="text-sm font-Poppins"><span className="text-green-500">7K+</span> <span className="text-xs opacity-70">Increase</span></p>
                 </Box>
-                <BarChart width={317} height={100} data={data}>
+                <BarChart width={317} height={130} data={data}>
+                  <XAxis dataKey='name' axisLine={false} tickLine={false} className="font-Poppins text-sm" />
                   <Bar dataKey="data" fill="#7c62ff" radius={10}/>
                 </BarChart>
               </Box>
@@ -167,6 +168,12 @@ const page = () => {
                   layout="horizontal"
                   margin={{top:20, left:50, right:40, bottom:60}}
                 /> */}
+                <BarChart layout="vertical" width={300} height={130} data={[{name:'Male', view:1345},{name:'Female', view:2122},{name:'Other', view:635},]}>
+                  <YAxis dataKey='name' type="category" axisLine={false} tickLine={false} className="font-Poppins text-sm" />
+                  <XAxis type="number" axisLine={false} tickLine={false}/>
+                  <Tooltip/>
+                  <Bar dataKey="view" fill="#feca33" radius={8}/>
+                </BarChart>
               </Box>
             </Box>
           </Grid>
