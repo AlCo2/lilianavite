@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import Welcome from './welcome.jsx'
 import Login from './login/page.jsx'
 import Store from './store/page.jsx'
+import ProductPage from './store/product/page.jsx';
 import Register from './register/page.jsx'
 import Checkout from './checkout/page.jsx'
 import Fastcheckout from './checkout/fastcheckout/page.jsx'
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path:'/store',
     element: <Store/>,
+  },
+  {
+    path:'/store/product',
+    element: <ProductPage/>
   },
   {
     path:'/dashboard',

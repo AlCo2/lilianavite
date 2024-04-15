@@ -177,7 +177,7 @@ function OrderModelComponent({order}) {
 const page = () => {
   return (
     <Container>
-      <Grid container mt={15}>
+      <Grid container mt={4}>
         <Grid item sx={{display:'flex', justifyContent:'right'}} mb={2} xs={12}>
         </Grid>
         <Grid item xs={12}>

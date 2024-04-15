@@ -32,9 +32,7 @@ const Footer = () => {
             <p className='font-bold'>NOUVEAU SUR Liliana ?</p>
             <p className='text-sm'>Inscrivez-vous à nos communications pour recevoir nos meilleures offres!</p>
             <input type="text" className='outline-none text-black text-sm h-7 rounded-sm px-1 max-w-40 my-2' placeholder='name@gmail.com' name="" id="" />
-            <ThemeProvider theme={theme}>
-            <Button color='liliana_third' className='h-7 text-xs'>Subscribe</Button>
-            </ThemeProvider>
+            <Button variant='contained' sx={{width:90, ml:1}} color='liliana_third' className='h-7 text-xs'>Subscribe</Button>
           </Grid>
         </Grid>
       </Container>

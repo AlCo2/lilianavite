@@ -152,7 +152,7 @@ const page = () => {
                   series={[{ data: [1345, 2122, 600], color:'#feca33' }]}
                   height={180}
                   layout="horizontal"
-                  margin={{top:20, left:40, right:40, bottom:60}}
+                  margin={{top:20, left:50, right:40, bottom:60}}
                 />
               </Box>
             </Box>

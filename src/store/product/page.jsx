@@ -37,8 +37,8 @@ const product = () => {
                                 </Grid>
                                 <Grid item display={'flex'} sx={{flexDirection:'column'}} gap={1} >
                                     <Rating name="size-small" defaultValue={2} size="small" />
-                                    <Button variant='contained' className='bg-liliana-primary hover:bg-rose-600 h-8'><BiPlusCircle/> Add</Button>
-                                    <Button variant='contained' className='bg-liliana-secondary hover:bg-violet-800 h-8'><BiCartAdd/> Buy</Button>
+                                    <Button variant='contained' color='liliana_primary' className='h-8'><BiPlusCircle/> Add</Button>
+                                    <Button variant='contained' color='liliana_secondary' className='h-8'><BiCartAdd/> Buy</Button>
                                 </Grid>
                             </Grid>
                         </Grid>
