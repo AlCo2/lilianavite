@@ -1,6 +1,17 @@
 import { Box, Button, Grid, IconButton, Table, TableBody, TableCell, TableHead, TableRow, Typography } from "@mui/material";
-import { BarChart, SparkLineChart } from "@mui/x-charts";
+import { SparkLineChart } from "@mui/x-charts";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { Bar, BarChart } from "recharts";
+
+const data = [ 
+  {name:'jan', data:3200},
+  {name:'feb', data:1600},
+  {name:'mar', data:1300},
+  {name:'avr', data:2600},
+  {name:'may', data:955},
+  {name:'jun', data:3432},
+  {name:'ss', data:2343},
+]
 
 const page = () => {
   return (
@@ -133,7 +144,9 @@ const page = () => {
                   <Typography sx={{color:'#7c62ff', fontSize:'1.875rem', lineHeight:'2.25rem', fontWeight:700, fontFamily:'Poppins'}}>6171DH</Typography>
                   <p className="text-sm font-Poppins"><span className="text-green-500">7K+</span> <span className="text-xs opacity-70">Increase</span></p>
                 </Box>
-                <SparkLineChart plotType="bar" colors={['#7c62ff']} data={[3200, 1600, 1300, 2600, 955, 3432, 2343]} height={100} showTooltip showHighlight/>
+                <BarChart width={317} height={100} data={data}>
+                  <Bar dataKey="data" fill="#7c62ff" radius={10}/>
+                </BarChart>
               </Box>
             </Box>
             <Box sx={{bgcolor:'white', height:250, borderWidth:1, borderRadius:4}}>
@@ -147,13 +160,13 @@ const page = () => {
                 </Box>
               </Box>
               <Box sx={{px:2}}>
-                <BarChart
+                {/* <BarChart
                   yAxis={[{ scaleType: 'band', data: ['Male', 'Female', 'Other']}]}
                   series={[{ data: [1345, 2122, 600], color:'#feca33' }]}
                   height={180}
                   layout="horizontal"
                   margin={{top:20, left:50, right:40, bottom:60}}
-                />
+                /> */}
               </Box>
             </Box>
           </Grid>
