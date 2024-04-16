@@ -1,4 +1,3 @@
-'use client'
 import { Box, List, Button, Checkbox, Container, FormControlLabel, FormGroup, Grid, IconButton, Menu, MenuItem, Paper } from '@mui/material';
 import { useState } from 'react';
 import { CgSortAz } from "react-icons/cg";

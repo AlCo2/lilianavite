@@ -1,5 +1,5 @@
 
-import { Avatar, Box, Grid, IconButton } from '@mui/material'
+import { Avatar, Box, Container, Grid, IconButton } from '@mui/material'
 import Sidebar from './components/Sidebar';
 import { Outlet } from "react-router-dom";
 import { BiBell, BiSearch } from 'react-icons/bi';
@@ -11,18 +11,20 @@ const page = () => {
           <Grid container className='min-h-screen'>
             <Sidebar/>
             <Grid item xs={10} className=''>
-              <Box sx={{height:60,bgcolor:'white', m:2, display:'flex', alignItems:'center', justifyContent:'space-between', borderRadius:2}}>
-                <Box sx={{ml:2}}>
-                  <label className='relative'>
-                    <BiSearch className='absolute top-1 right-2'/>
-                    <input type="text" placeholder='Search' className='border w-72 h-8 focus:outline-blue-400 p-1 text-sm' name="" id="" />
-                  </label>
+              <Container>
+                <Box sx={{height:60,bgcolor:'white', mt:2, display:'flex', alignItems:'center', justifyContent:'space-between', borderRadius:2}}>
+                  <Box sx={{ml:2}}>
+                    <label className='relative'>
+                      <BiSearch className='absolute top-1 right-2'/>
+                      <input type="text" placeholder='Search' className='border w-72 h-8 focus:outline-blue-400 p-1 text-sm' name="" id="" />
+                    </label>
+                  </Box>
+                  <Box sx={{ mr:2, display:'flex', alignItems:'center', gap:1}}>
+                    <IconButton><BiBell/></IconButton>
+                    <Avatar alt="Abdou lahboub" src="https://cdn.britannica.com/55/188355-050-D5E49258/Salvatore-Corsitto-The-Godfather-Marlon-Brando-Francis.jpg" />
+                  </Box>
                 </Box>
-                <Box sx={{ mr:2, display:'flex', alignItems:'center', gap:1}}>
-                  <IconButton><BiBell/></IconButton>
-                  <Avatar alt="Abdou lahboub" src="https://cdn.britannica.com/55/188355-050-D5E49258/Salvatore-Corsitto-The-Godfather-Marlon-Brando-Francis.jpg" />
-                </Box>
-              </Box>
+              </Container>
               <Outlet/>
             </Grid>
           </Grid>

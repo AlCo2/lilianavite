@@ -1,4 +1,3 @@
-'use client'
 import { useState } from "react";
 import OrderSummary from "./components/OrderSummary";
 import Order from "./components/Order";
