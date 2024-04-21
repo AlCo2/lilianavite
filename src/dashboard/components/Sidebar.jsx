@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Grid, List, ListItemButton, Collapse } from '@mui/material'
 import { BiMessage, BiSolidDashboard, BiUser } from 'react-icons/bi';
 import { FaAngleDown, FaAngleUp, FaBuffer, FaCalculator, FaCalendarCheck, FaDolly } from 'react-icons/fa';
-import {useLocation} from 'react-router-dom'
 
 
 const Sidebar = () => {
-    const location = useLocation();
-    const { hash, pathname, search } = location;
+    const pathname = window.location.pathname;
     const [selectedIndex, setSelectedIndex] = useState(1);
     const [open, setOpen] = useState(false);
     const style = (path) =>{

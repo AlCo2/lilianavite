@@ -58,12 +58,6 @@ const columns = [
     ),
   }
 ];
-const data = [
-  {id:'2131', customer:'abdou lahboub', total:'600DH', status:1},
-  {id:'3423', customer:'John Paul', total:'432DH', status:2},
-  {id:'2321', customer:'Sandra Bowman', total:'144DH', status:2},
-  {id:'5544', customer:'Jimmy Panda', total:'233DH', status:3},
-];
 
 const style = {  position: 'absolute',
   top: '50%',
