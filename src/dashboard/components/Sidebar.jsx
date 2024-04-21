@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Grid, List, ListItemButton, Collapse } from '@mui/material'
+import { Grid, List, ListItemButton, Collapse, Box, IconButton, Button } from '@mui/material'
 import { BiMessage, BiSolidDashboard, BiUser } from 'react-icons/bi';
 import { FaAngleDown, FaAngleUp, FaBuffer, FaCalculator, FaCalendarCheck, FaDolly } from 'react-icons/fa';
 
@@ -8,6 +8,8 @@ const Sidebar = () => {
     const pathname = window.location.pathname;
     const [selectedIndex, setSelectedIndex] = useState(1);
     const [open, setOpen] = useState(false);
+    const [sideOpen, setSideOpen] = useState(false);
+    
     const style = (path) =>{
         return {
             display:'flex', 
@@ -26,9 +28,14 @@ const Sidebar = () => {
         setOpen(!open);
     };
     return (
-        <Grid item xs={2} className='bg-gray-900'>
+    <>
+        <Grid className='xl:hidden' item height={20} xs={12}>
+            <button className={(sideOpen?'hidden':'')} onClick={()=>{setSideOpen(true)}}>open</button>
+        </Grid>
+        <Grid item xs md={2} className={'bg-gray-900 max-xl:fixed max-xl:top-0 max-xl:left-0 max-xl:h-full max-xl:z-10 max-xl:w-56 max-xl:duration-300 '+ (sideOpen?'max-xl:translate-x-0':'max-xl:-translate-x-full')}>
             <div className='text-center mt-4'>
-            <p className='text-xl font-Poppins text-white font-semibold'>Dashboard</p>
+                <p className='text-xl font-Poppins text-white font-semibold'>Dashboard</p>
+                <button className='text-white absolute right-2 top-0 xl:hidden' onClick={()=>{setSideOpen(false)}}>X</button>
             </div>
             <div className='p-4'>
             <List className='flex flex-col gap-1'>
@@ -70,6 +77,7 @@ const Sidebar = () => {
             </List>
             </div>
         </Grid>
+    </>
   )
 }
 
