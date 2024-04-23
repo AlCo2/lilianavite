@@ -8,7 +8,7 @@ import { theme } from '../theme';
 const page = () => {
   return (
     <>
-        <Navbar/>  
+        <Navbar/>
         <div className='min-h-80 bg-liliana-background'>
             <Container>
                 <Box pt={1} mb={1}>
@@ -30,7 +30,7 @@ const page = () => {
                         </Box>
                         <Box sx={{display:'flex', justifyContent:'space-between', gap:1}} mt={2}>
                             <Button href='/' variant='outlined' size='small' color='liliana_third' className='font-Roboto'>Back</Button>
-                            <Button variant='contained' size='small' color='liliana_third' className='font-Roboto'>Continue</Button>
+                            <Button variant='contained' href='/showorder' size='small' color='liliana_third' className='font-Roboto'>Continue</Button>
                         </Box>
                     </div>
                 </div>

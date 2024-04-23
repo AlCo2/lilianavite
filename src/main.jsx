@@ -8,6 +8,7 @@ import Register from './register/page.jsx'
 import Checkout from './checkout/page.jsx'
 import Fastcheckout from './checkout/fastcheckout/page.jsx'
 import Checkorder from './checkorder/page.jsx'
+import Showorder from './checkorder/showorder/page.jsx'
 import Dashboard from './dashboard/layout.jsx'
 import Overview from './dashboard/page.jsx'
 import Customer from './dashboard/customer/page.jsx'
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
   {
     path:'/checkorder',
     element: <Checkorder/>
+  },
+  {
+    path:'/showorder',
+    element: <Showorder/>
   },
   {path:'/promotions',
     element: <Promotions/>,

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Grid, List, ListItemButton, Collapse, Box, IconButton, Button } from '@mui/material'
 import { BiMessage, BiSolidDashboard, BiUser } from 'react-icons/bi';
-import { FaAngleDown, FaAngleUp, FaBuffer, FaCalculator, FaCalendarCheck, FaDolly } from 'react-icons/fa';
+import { FaAngleDown, FaAngleUp, FaBars, FaBuffer, FaCalculator, FaCalendarCheck, FaDolly } from 'react-icons/fa';
 
 
 const Sidebar = () => {
@@ -30,7 +30,7 @@ const Sidebar = () => {
     return (
     <>
         <Grid className='xl:hidden' item height={20} xs={12}>
-            <button className={(sideOpen?'hidden':'')} onClick={()=>{setSideOpen(true)}}>open</button>
+            <FaBars onClick={()=>setSideOpen(true)} className={'text-white mr-2 cursor-pointer hover:text-black text-2xl duration-300 ' +(sideOpen?'hidden':'')}/>
         </Grid>
         <Grid item xs md={2} className={'bg-gray-900 max-xl:fixed max-xl:top-0 max-xl:left-0 max-xl:h-full max-xl:z-10 max-xl:w-56 max-xl:duration-300 '+ (sideOpen?'max-xl:translate-x-0':'max-xl:-translate-x-full')}>
             <div className='text-center mt-4'>
@@ -43,7 +43,7 @@ const Sidebar = () => {
                     <BiSolidDashboard/>
                     <p>Overview</p>
                 </ListItemButton>
-                <ListItemButton href='/dashboard/customer' sx={style('/dashboard/customer')} className={'flex gap-1 duration-300 rounded-md h-10 hover:opacity-100 hover:bg-blue-900 hover:text-blue-400 ' + (pathname==='/dashboard/customer'?'bg-blue-900 bg-opacity-70 text-blue-400':'text-white opacity-70')}>
+                <ListItemButton href='/dashboard/customer' sx={style('/dashboard/customer')} className={'flex gap-1 duration-500 rounded-md h-10 hover:opacity-100 hover:bg-blue-900 hover:text-blue-400 ' + (pathname==='/dashboard/customer'?'bg-blue-900 bg-opacity-70 text-blue-400':'text-white opacity-70')}>
                     <BiUser/>
                     <p>Customer</p>
                 </ListItemButton>
