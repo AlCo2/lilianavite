@@ -28,7 +28,7 @@ export default function Home() {
                 </Box>
               </Box>
               <Box sx={{display:'flex', alignItems:'center', justifyContent:{sm:'center',md:'left'}, my:4}}>
-                <Button variant="contained" color="liliana_primary" size="large" sx={{borderRadius:0}}>Shop Now</Button>
+                <Button variant="contained" href="/store" color="liliana_primary" size="large" sx={{borderRadius:0}}>Shop Now</Button>
               </Box>
             </Container>
           </Grid>
