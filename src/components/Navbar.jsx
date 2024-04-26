@@ -8,24 +8,22 @@ import {useLocation} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
 const Navbar = ({page}) => {
-  const [sticky, setSticky] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [sticky, setSticky] = useState(false);  
+  
   const location = useLocation();
   const { hash, pathname, search } = location;
   const handleScroll = () => {
     const currentScrollPos = window.scrollY
-    console.log(currentScrollPos);
     if(currentScrollPos < 80){
         setSticky(false)
     }else{
         setSticky(true)
     }
-    setPrevScrollPos(currentScrollPos)
   }
   useEffect(()=>{
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll)
-  })
+  }, [])
 
   return (
     <>
@@ -34,7 +32,7 @@ const Navbar = ({page}) => {
           <li><a className={`duration-300 font-semibold hover:text-black flex items-center gap-1 ${page==='home'?'text-black':''}`} href="/"><BsHouse/>Home</a></li>
           <li><a className={`duration-300 font-semibold hover:text-black flex items-center gap-1 ${page==='store'?'text-black':''}`}  href="/store"><BsShop/>Store</a></li>
           <li><a className={`duration-300 font-semibold hover:text-black flex items-center gap-1 ${page==='promotions'?'text-black':''}`} href="/promotions"><BsTicket/>Promotions</a></li>
-          <li className='flex items-center'><BiPhoneCall/><p className='font-Poppins'>+212635324542</p></li>
+          <li className='flex items-center'><BiPhoneCall/><p className='font-Poppins'>+212 614 903 001</p></li>
           <li className='flex items-center'>
             <AccountMenu />
             <IconButton href='/checkout' className={`${page==='checkout'?'text-black':'text-white'}`} aria-label="cart">
