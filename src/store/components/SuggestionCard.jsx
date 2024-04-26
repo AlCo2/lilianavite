@@ -1,7 +1,6 @@
-import { Box, Button, Card, CardContent, CardMedia, Grid, Typography, ThemeProvider } from '@mui/material';
+import { Box, Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import React from 'react'
 import { FaShoppingBasket } from 'react-icons/fa';
-import { theme } from '../../theme';
 
 const SuggestionCard = ({title, image, price}) => {
   return (

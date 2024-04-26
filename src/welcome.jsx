@@ -5,6 +5,7 @@ import IntroCard from "./components/IntroCard";
 import ServiceIntro from "./components/home/ServiceIntro";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import DiscountCard from "./components/DiscountCard";
 
 export default function Home() {
   return (
@@ -49,6 +50,16 @@ export default function Home() {
           <ServiceIntro icon={<IoIosTime/>} title='Livraison super rapide' 
             description='Entre 24 et 48 heurs'
           />
+        </Grid>
+        <div className="text-center mt-11 bg-liliana-secondary rounded-md py-2">
+          <h1 className="text-5xl font-Opensans max-xs:text-3xl text-white">Discounts</h1>
+          <p className="font-Opensans text-white">See Our Best Offer</p>
+        </div>
+        <Grid container justifyContent={'center'} rowGap={2} columnGap={5} className="my-10">
+          <DiscountCard title='PHILOS 100ML ORIGINAL' image='/assets/philos.jpg' price={600} discountPrice={499}/>
+          <DiscountCard title='اميرة العرب ORIGINAL 100ML' image='/assets/amirataraboriginal.jpg' price={2000} discountPrice={1800}/>
+          <DiscountCard title='GLOSSE KIKO MILANO' image='/assets/kiko.jpg' price={150} discountPrice={100}/>
+          <DiscountCard title='PHILOS 100ML ORIGINAL' image='/assets/philos.jpg' price={700} discountPrice={599}/>
         </Grid>
         <div className="text-center mt-11 bg-liliana-secondary rounded-md py-2">
           <h1 className="text-5xl font-Opensans max-xs:text-3xl text-white">Featured</h1>
