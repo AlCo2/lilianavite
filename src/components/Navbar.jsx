@@ -1,4 +1,3 @@
-'use client'
 import { Badge, IconButton } from '@mui/material';
 import { BiPhoneCall, BiShoppingBag } from 'react-icons/bi'
 import {BsHouse, BsShop, BsTicket, } from 'react-icons/bs'
