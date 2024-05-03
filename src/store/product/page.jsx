@@ -8,18 +8,18 @@ const product = () => {
   return (
     <>
     <Navbar/>
-    <div className='bg-liliana-background pb-5'>
-        <Grid container bgcolor={"white"} py={4}>
-            <Grid item xs={12} sm={6}>
+    <div>
+        <Grid container className='h-screen'>
+            <Grid item xs={12} sm={6} className='bg-liliana-background sm:p-4'>
                 <Box sx={{display:"flex", justifyContent:"center"}}>
-                    <img src="/assets/amirataraboriginal.jpg" className='sm:w-1/2 max-sm:w-full rounded-md' alt="packfakhama" />
+                    <img src="/assets/amirataraboriginal.jpg" className='sm:w-1/2 max-sm:w-full rounded-md' alt="AmiratArabOriginal"/>
                 </Box>
                 <Box sx={{display:'flex', gap:1, justifyContent:'center', my:2}}>
                     <img src="/assets/amirataraboriginal.jpg" className='max-w-20 cursor-pointer hover:scale-105 duration-300 border-2 border-liliana-primary rounded-md' alt="kiko"/>
                     <img src="https://www.oudmalaki.com/wp-content/uploads/2021/10/ameerat-al-arab-100ml-oudmalaki-2.webp" className='max-w-20 border cursor-pointer hover:scale-105 duration-300 hover:border-2 hover:border-liliana-primary hover:rounded-md' alt="amiratarab" />
                 </Box>
             </Grid>
-            <Grid item xs={12} sm={6} p={4}>
+            <Grid item xs={12} sm={6} p={4} bgcolor={"white"} >
                 <div className='my-5'>
                     <p className='font-Roboto uppercase opacity-40 font-semibold'>Parfum</p>
                 </div>
@@ -39,9 +39,9 @@ const product = () => {
             </Grid>
         </Grid>
         <Container>
-        <p className='font-Poppins text-xl mt-2'>Latest Product</p>
+        <p className='font-Poppins text-xl my-4'>Produits similaires</p>
         <Divider/>
-        <Grid container gap={1} justifyContent={{xs:'center', sm:'left'}} mt={2}>
+        <Grid container gap={1} justifyContent={{xs:'center', sm:'left'}} my={2}>
             <SuggestionCard title='اميرة العرب ORIGINAL 100ML' image='/assets/amirataraboriginal.jpg' price={250}/>
             <SuggestionCard title='GLOSSE KIKO MILANO' image='/assets/kiko.jpg' price={70}/>
             <SuggestionCard title='PHILOS 100ML ORIGINAL' image='/assets/philos.jpg' price={300}/>
@@ -50,7 +50,7 @@ const product = () => {
         </Grid>
         </Container>
     </div>
-    <Footer/>
+    <Footer/> 
     </>
   )
 }
