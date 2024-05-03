@@ -274,7 +274,7 @@ const store = () => {
     <>
     <Navbar page={'store'}/>
       <div className='min-h-screen pt-5 bg-liliana-background max-sm:px-4'>
-          <Grid container columns={12} justifyContent={'center'} gap={2}>
+          <Grid container columns={12} justifyContent={'center'}>
             <Grid xs={2.5} item sx={{p:"1.25rem", pb:'0.25rem', pt:'1.9rem'}} className='max-lg:hidden '>
               <p className='font-bold font-Opensans text-xl'>Filters</p>
               <p className='font-Opensans font-semibold mt-5'>Price</p>
@@ -287,7 +287,7 @@ const store = () => {
                 ))}
               </FormGroup>
             </Grid>
-            <Grid md={9} sx={{p:"1.25rem", pb:'0.25rem'}} item>
+            <Grid md={9.5} sx={{p:"1.25rem", pb:'0.25rem'}} item>
                 <Grid container alignItems={'center'} justifyContent={'space-between'}>
                   <Grid item>
                     <p className='font-bold text-sm opacity-70'>23 Items</p>
@@ -303,9 +303,9 @@ const store = () => {
                     </Box>
                   </Grid>
                 </Grid>
-              <Grid container gap={4} marginY={5} justifyContent={{xs:'center'}} mt={2}>
+              <Grid container gap={2} marginY={5} justifyContent={{xs:'center'}} mt={2}>
                 <SuggestionCard title='اميرة العرب ORIGINAL 100ML' image='/assets/amirataraboriginal.jpg' price={250}/>
-                <SuggestionCard title='GLOSSE KIKO MILANO' image='/assets/kiko.jpg' price={70}/>
+                <SuggestionCard title='Alpine Homme Sport Maison Alhambra' image='https://parfumstore.ma/wp-content/uploads/2024/04/alpine-homme-sport-maison-alhambra-prix-maroc.webp' price={199}/>
                 <SuggestionCard title='GLOSSE KIKO MILANO' image='/assets/kiko.jpg' price={70}/>
                 <SuggestionCard title='اميرة العرب ORIGINAL 100ML' image='/assets/amirataraboriginal.jpg' price={250}/>
               </Grid>
