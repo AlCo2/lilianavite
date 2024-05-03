@@ -11,7 +11,7 @@ const page = () => {
     <Box className="min-h-screen bg-liliana-background">
       <Grid container>
         <Grid item xs={12}>
-          <img src="assets/promo.jpg" alt="promo" />
+          <img className="cursor-pointer" src="assets/promo.jpg" alt="promo" />
         </Grid>
         <Grid item xs={12}>
           <Grid container justifyContent={'center'} rowGap={2} columnGap={5} className="my-10">
@@ -26,11 +26,11 @@ const page = () => {
           </Grid>
         </Grid>
         <Grid item xs={12} sx={{display:'flex', justifyContent:'center', gap:5, flexWrap:'wrap', mb:2}}>
-          <img src="assets/lots-img-09.jpg" alt="lots" />
-          <img src="assets/lots-img-22.jpg" alt="lots" />
+          <img className="cursor-pointer" src="assets/lots-img-09.jpg" alt="lots" />
+          <img className="cursor-pointer" src="assets/lots-img-22.jpg" alt="lots" />
         </Grid>
         <Grid item xs={12}>
-          <img src="assets/promo4.jpg" alt="promo" />
+          <img className="cursor-pointer" src="assets/promo4.jpg" alt="promo" />
         </Grid>
         <Grid item xs={12}>
           <Grid container justifyContent={'center'} rowGap={2} columnGap={5} className="my-10">

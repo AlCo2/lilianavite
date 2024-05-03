@@ -203,8 +203,7 @@ const store = () => {
   return (
     <>
     <Navbar page={'store'}/>
-      <div className='min-h-screen pt-5 bg-liliana-background'>
-        <Container>
+      <div className='min-h-screen pt-5 bg-liliana-background max-sm:px-4'>
           <Grid container columns={12} justifyContent={'center'} gap={2}>
             <Grid xs={2} item className='max-xl:hidden'>
               <Paper className='p-5 rounded-md'>
@@ -240,7 +239,6 @@ const store = () => {
               </Grid>
             </Grid>
           </Grid>
-        </Container>
       </div>
       <Footer/>
     </>
