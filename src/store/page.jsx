@@ -1,4 +1,4 @@
-import { Box, List, Button, Checkbox, Container, FormControlLabel, FormGroup, Grid, IconButton, Menu, MenuItem, Paper } from '@mui/material';
+import { Box, List, Button, Checkbox, Container, FormControlLabel, FormGroup, Grid, IconButton, Menu, MenuItem, Paper, Slider, InputLabel, FormControl, OutlinedInput, InputAdornment, Input, TextField } from '@mui/material';
 import { useState } from 'react';
 import { CgSortAz } from "react-icons/cg";
 import SuggestionCard from './components/SuggestionCard';
@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import { BiSearch } from 'react-icons/bi';
 import { RiArrowUpDownFill } from 'react-icons/ri';
 import Footer from '../components/Footer';
+import { FaCheckCircle } from 'react-icons/fa';
 
 const SortMenu = () =>{
   const [anchorEl, setAnchorEl] = useState(null);
@@ -35,7 +36,6 @@ const SortMenu = () =>{
       <List
         component="nav"
         aria-label="Device settings"
-        sx={{ bgcolor: 'background.paper' }}
       >
         <IconButton
           id="lock-button"
@@ -109,6 +109,72 @@ const CategoryMenu = () =>{
   )
 }
 
+
+const FilterPrice = () =>{
+  const [value1, setValue1] = useState([300, 1250]);
+  function valuetext(value) {
+    return `${value}°C`;
+  }
+  const minDistance = 10;
+
+  const handleChange1 = (event, newValue, activeThumb) => {
+    if (!Array.isArray(newValue)) {
+      return;
+    }
+
+    if (activeThumb === 0) {
+      setValue1([Math.min(newValue[0], value1[1] - minDistance), value1[1]]);
+    } else {
+      setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
+    }
+  };
+  return (
+    <>
+        <Slider
+          getAriaLabel={() => 'Minimum distance'}
+          color='liliana_third'
+          value={value1}
+          onChange={handleChange1}
+          valueLabelDisplay="auto"
+          getAriaValueText={valuetext}
+          disableSwap
+          min={0}
+          max={3000}
+        />
+        <div className='flex flex-wrap gap-1'>
+          <FormControl fullWidth sx={{width:85}}>
+            <TextField
+              id="outlined-start-adornment"
+              sx={{bgcolor:'white'}}
+              InputProps={{
+                startAdornment: <InputAdornment position="start">DH</InputAdornment>,
+                style:{fontSize:'12px'}
+              }}
+              size='small'
+              value={value1[0]}
+            />
+          </FormControl>
+          -
+          <FormControl fullWidth sx={{width:85}}>
+            <TextField
+              id="outlined-start-adornment"
+              sx={{bgcolor:'white'}}
+              InputProps={{
+                startAdornment: <InputAdornment position="start">DH</InputAdornment>,
+                style:{fontSize:'12px'}
+              }}
+              size='small'
+              value={value1[1]}
+            />
+          </FormControl>
+          <IconButton size='small'>
+            <FaCheckCircle className='text-green-600'/>
+          </IconButton>
+        </div>
+      </>
+  )
+}
+
 const FilterMenu = () =>{
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -153,6 +219,10 @@ const FilterMenu = () =>{
                   <BiSearch className='absolute top-0 right-2'/>
                   <input type="text" placeholder='Search' className='border h-8 focus:outline-blue-400 p-1 text-sm w-full' name="" id="" />
                 </label>
+              </Grid>
+              <Grid item xs={12}>
+                <p className='font-Poppins'>price</p>
+                <FilterPrice/>
               </Grid>
               <Grid item xs={12}>
                 <p className='font-Poppins'>Categories</p>
@@ -205,37 +275,39 @@ const store = () => {
     <Navbar page={'store'}/>
       <div className='min-h-screen pt-5 bg-liliana-background max-sm:px-4'>
           <Grid container columns={12} justifyContent={'center'} gap={2}>
-            <Grid xs={2} item className='max-xl:hidden'>
-              <Paper className='p-5 rounded-md'>
-                <p className='font-bold'>categories</p>
-                <FormControlLabel control={<Checkbox onChange={handleSelectAllChange}/>} label="All" />
-                <FormGroup className='pl-5'>
-                  {categories.map(category=>(
-                    <FormControlLabel key={category.id} control={<Checkbox checked={category.status} size='small' onChange={handleCheckboxChange(category.id)} />} label={category.name} />  
-                  ))}
-                </FormGroup>
-              </Paper>
+            <Grid xs={2.5} item sx={{p:"1.25rem", pb:'0.25rem', pt:'1.9rem'}} className='max-lg:hidden '>
+              <p className='font-bold font-Opensans text-xl'>Filters</p>
+              <p className='font-Opensans font-semibold mt-5'>Price</p>
+              <FilterPrice/>
+              <p className='font-Opensans font-semibold mt-5'>Categories</p>
+              <FormControlLabel control={<Checkbox color='liliana_third' size='small' onChange={handleSelectAllChange}/>} label="All" />
+              <FormGroup className='pl-2 font-Opensans'>
+                {categories.map(category=>(
+                  <FormControlLabel key={category.id} control={<Checkbox color='liliana_third' checked={category.status} size='small' onChange={handleCheckboxChange(category.id)} />} label={category.name} />  
+                ))}
+              </FormGroup>
             </Grid>
-            <Grid md={9} item>
-              <Paper className='p-5 pb-1 rounded-md'>
+            <Grid md={9} sx={{p:"1.25rem", pb:'0.25rem'}} item>
                 <Grid container alignItems={'center'} justifyContent={'space-between'}>
                   <Grid item>
                     <p className='font-bold text-sm opacity-70'>23 Items</p>
                   </Grid>
                   <Grid item display={'flex'} alignItems={'center'} gap={2}>
                     <Box display={'flex'} alignItems={'center'}>
-                      <p className='text-sm'>Filter</p>
-                      <FilterMenu/>
+                      <div className='flex items-center lg:hidden'>
+                        <p className='text-sm'>Filters</p>
+                        <FilterMenu/>
+                      </div>
                       <p className='text-sm'>Sort</p>
                       <SortMenu/>
                     </Box>
                   </Grid>
                 </Grid>
-              </Paper>
-              <Grid container gap={1} marginY={5} justifyContent={{xs:'center'}} mt={2}>
+              <Grid container gap={4} marginY={5} justifyContent={{xs:'center'}} mt={2}>
                 <SuggestionCard title='اميرة العرب ORIGINAL 100ML' image='/assets/amirataraboriginal.jpg' price={250}/>
                 <SuggestionCard title='GLOSSE KIKO MILANO' image='/assets/kiko.jpg' price={70}/>
                 <SuggestionCard title='GLOSSE KIKO MILANO' image='/assets/kiko.jpg' price={70}/>
+                <SuggestionCard title='اميرة العرب ORIGINAL 100ML' image='/assets/amirataraboriginal.jpg' price={250}/>
               </Grid>
             </Grid>
           </Grid>

@@ -136,10 +136,10 @@ export default function Home() {
         </Grid>
         <SectionBanner title={"Latest Products"} text={"See new Products"} />
         <Grid container justifyContent={'center'} rowGap={2} columnGap={5} className="my-10">
-          <IntroCard title='Pack AL FAKHAMA' image='/assets/packalfakhama.jpeg' price={300}/>
-          <IntroCard title='Pack ITARA' image='/assets/packitara.jpeg' price={210}/>
-          <IntroCard title='Pack انوثة' image='/assets/anotapack.jpeg' price={199}/>
-          <IntroCard title='Pack ITARA' image='/assets/packitara.jpeg' price={210}/>
+          <IntroCard title='Amber & Leather' image='https://parfumstore.ma/wp-content/uploads/2024/04/amber-leather-maison-alhambra-prix-maroc.webp' price={300}/>
+          <IntroCard title='Ana Abiyedh' image='https://parfumstore.ma/wp-content/uploads/2024/04/ana-abiyedh-i-am-white-poudree-lattafa-%D8%A3%D9%86%D8%A7-%D8%A7%D9%84%D8%A3%D8%A8%D9%8A%D8%B6-%D8%A8%D9%88%D8%AF%D8%B1%D9%8A.webp' price={210}/>
+          <IntroCard title='Candid Tonight' image='https://parfumstore.ma/wp-content/uploads/2024/04/candid-tonight-maison-alhambra.webp' price={199}/>
+          <IntroCard title='Ser Al Malika – Lattafa' image='https://parfumstore.ma/wp-content/uploads/2024/04/ser-al-malika-lattafa-pour-femme.webp' price={210}/>
         </Grid>
       <Footer/>
     </>
