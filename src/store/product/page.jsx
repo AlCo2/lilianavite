@@ -9,7 +9,7 @@ const product = () => {
     <>
     <Navbar/>
     <div>
-        <Grid container className='h-screen'>
+        <Grid container className='min-h-screen'>
             <Grid item xs={12} sm={6} className='bg-liliana-background sm:p-4'>
                 <Box sx={{display:"flex", justifyContent:"center"}}>
                     <img src="/assets/amirataraboriginal.jpg" className='sm:w-1/2 max-sm:w-full rounded-md' alt="AmiratArabOriginal"/>
@@ -38,16 +38,16 @@ const product = () => {
                 </div>
             </Grid>
         </Grid>
-        <Container>
-        <p className='font-Poppins text-xl my-4'>Produits similaires</p>
         <Divider/>
-        <Grid container gap={1} justifyContent={{xs:'center', sm:'left'}} my={2}>
-            <SuggestionCard title='اميرة العرب ORIGINAL 100ML' image='/assets/amirataraboriginal.jpg' price={250}/>
-            <SuggestionCard title='GLOSSE KIKO MILANO' image='/assets/kiko.jpg' price={70}/>
-            <SuggestionCard title='PHILOS 100ML ORIGINAL' image='/assets/philos.jpg' price={300}/>
-            <SuggestionCard title='Pack AL FAKHAMA' image='/assets/packalfakhama.jpeg' price={300}/>
-            <SuggestionCard title='Pack ITARA' image='/assets/packitara.jpeg' price={210}/>
-        </Grid>
+        <Container>
+            <p className='font-Poppins text-xl my-4'>Produits similaires</p>
+            <Grid container gap={1} justifyContent={{xs:'center', sm:'left'}} my={2}>
+                <SuggestionCard title='اميرة العرب ORIGINAL 100ML' image='/assets/amirataraboriginal.jpg' price={250}/>
+                <SuggestionCard title='GLOSSE KIKO MILANO' image='/assets/kiko.jpg' price={70}/>
+                <SuggestionCard title='PHILOS 100ML ORIGINAL' image='/assets/philos.jpg' price={300}/>
+                <SuggestionCard title='Pack AL FAKHAMA' image='/assets/packalfakhama.jpeg' price={300}/>
+                <SuggestionCard title='Pack ITARA' image='/assets/packitara.jpeg' price={210}/>
+            </Grid>
         </Container>
     </div>
     <Footer/> 

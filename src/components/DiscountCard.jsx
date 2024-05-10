@@ -4,22 +4,20 @@ import { FaShoppingBasket } from 'react-icons/fa';
 const DiscountCard = ({title, image, price, discountPrice}) => {
   return (
     <Grid item >
-      <Card sx={{width:240, ":hover":{boxShadow:5}, cursor:'pointer'}}>
-        <Box mr={1}>
-            <p className='font-Poppins text-red-500 text-right'>{'-'+parseInt(((price - discountPrice) / (price)) * 100)+'%'}</p>
+      <Card sx={{width:240, ":hover":{boxShadow:5}, cursor:'pointer', position:'relative'}}>
+        <Box>
+            <p className='absolute right-0 top-1 text-white text-xs font-Poppins bg-liliana-primary text-right px-2 py-1 rounded-l-lg'>{'-'+parseInt(((price - discountPrice) / (price)) * 100)+'%'}</p>
         </Box>
-        <Box display={'flex'} justifyContent={'center'}>
-          <CardMedia component={'img'}
-            sx={{height:200, width:200, borderRadius:5}}
-            image={image}
-            alt={title}
-          />
-        </Box>
+          <Box display={'flex'} justifyContent={'center'}>
+              <CardMedia component={'img'}
+                sx={{height:180, width:'100%'}}
+                image={image}
+                alt={title}
+              />
+          </Box>
         <Box display={'flex'} height={70} justifyContent={'center'}>
-          <CardContent>              
-            <Typography textAlign={'center'} variant="h6">
-              {title}
-            </Typography>
+          <CardContent>
+            <p className='text-center font-bold'>{title}</p>
           </CardContent>
         </Box>
         <Box display={'flex'} mr={2} justifyContent={'space-between'} alignItems={'center'}>
@@ -29,7 +27,7 @@ const DiscountCard = ({title, image, price, discountPrice}) => {
                     <p className='font-Poppins p-2 text-white font-bold'>{discountPrice}.00DH</p>
                 </div>
             </Box>
-          <Button variant="contained" color='liliana_secondary'><FaShoppingBasket/></Button>
+          <Button variant="contained" color='liliana_third'><FaShoppingBasket/></Button>
         </Box>
       </Card>
     </Grid>
