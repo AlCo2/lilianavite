@@ -56,7 +56,7 @@ export default function SideBar() {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton>
+            <ListItemButton href='/promotion'>
               <ListItemIcon>
                 <BsTicket/>
               </ListItemIcon>
@@ -78,7 +78,7 @@ export default function SideBar() {
               <Box sx={{ width: '100%'}}>
                 <List disablePadding>
                   <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton href='/login'>
                       <ListItemIcon>
                         <CiLogin/>
                       </ListItemIcon>
@@ -86,7 +86,7 @@ export default function SideBar() {
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton href='/register'>
                       <ListItemIcon>
                         <RiShieldUserFill/>
                       </ListItemIcon>
@@ -96,7 +96,7 @@ export default function SideBar() {
                 </List>
                 <Divider />
                   <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton href='/checkorder'>
                       <ListItemIcon>
                         <CiCircleCheck/>
                       </ListItemIcon>

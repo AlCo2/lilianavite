@@ -9,7 +9,7 @@ import DiscountCard from "./components/DiscountCard";
 
 const SectionBanner = ({title, text}) =>{
   return (
-    <div className="text-center mt-11 bg-liliana-secondary rounded-md py-2 mx-4">
+    <div className="text-center mt-11 bg-liliana-third rounded-md py-2 mx-4">
       <h1 className="text-5xl font-Opensans max-xs:text-3xl text-white">{title}</h1>
       <p className="font-Opensans text-white">{text}</p>
     </div>
@@ -60,10 +60,10 @@ export default function Home() {
             description='Entre 24 et 48 heurs'
           />
         </Grid>
-        <div className="h-1 bg-liliana-primary rounded-md my-10"></div>
-        <Grid container mt={2}>
+        <div className="h-1 bg-liliana-primary rounded-md my-2"></div>
+        <Grid container my={4}>
           <Grid item sm={12} md={5}>
-            <p className="font-Poppins font-medium text-3xl">New Style for Latest <br /> Collections</p>
+            <p className="font-Poppins text-liliana-secondary font-medium text-3xl mb-4">New Style for Latest <br /> Collections</p>
           </Grid>
           <Grid item xs={12} sm >
             <p className="opacity-70 text-sm font-Poppins">Discover our latest collection of clothing, shoes, and accessoires that are perfect for any occasion. From casual wear to formal attire. we have everything you need to revamp your wardrobe and stay on trend.</p>
